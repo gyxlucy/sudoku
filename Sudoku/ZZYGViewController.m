@@ -91,8 +91,6 @@ UIButton* myButtons[9][9];
             row += 5;
         }
     }
-    
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,7 +101,7 @@ UIButton* myButtons[9][9];
 
 - (void)buttonPressed:(UIButton*)sender
 {
-    NSLog([@"You Pressed the button!" stringByAppendingString: sender.currentTitle]);
+    NSLog([@"You Pressed the button " stringByAppendingString: sender.currentTitle]);
 }
 
 @end
