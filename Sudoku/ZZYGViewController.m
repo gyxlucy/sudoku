@@ -64,14 +64,19 @@ UIButton* myButtons[9][9];
     
     int row = 14;
     int column;
+    int tag = 0;
     
     for (int i = 0; i < 9; i++) {
         column = 14;
         for (int j = 0; j < 9; j++) {
             
+            
+            
             CGRect buttonFrame = CGRectMake(row, column, buttonSize, buttonSize);
             myButtons[i][j] = [[UIButton alloc] initWithFrame:buttonFrame];
             myButtons[i][j].backgroundColor = [UIColor whiteColor];
+            myButtons[i][j].tag = tag;
+            ++tag;
             if (initialGrid[i][j]){
                 [myButtons[i][j] setTitle:[NSString stringWithFormat: @"%d", initialGrid[i][j]] forState:UIControlStateNormal];
             }
@@ -93,6 +98,21 @@ UIButton* myButtons[9][9];
     }
 }
 
+- (int)getButtonRow:(UIButton*) sender
+{
+    return sender.tag % 9;
+}
+
+- (int)getButtonCol:(UIButton*) sender
+{
+    return sender.tag / 9;
+}
+
+- (void)setHighlighted:(UIButton*) sender
+{
+    sender.backgroundColor = [UIColor yellowColor];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -101,7 +121,10 @@ UIButton* myButtons[9][9];
 
 - (void)buttonPressed:(UIButton*)sender
 {
+    [self setHighlighted:(sender)];
     NSLog([@"You Pressed the button " stringByAppendingString: sender.currentTitle]);
+    NSLog([@"Button Row " stringByAppendingString:[NSString stringWithFormat: @"%d", [self getButtonRow:sender]]]);
+    NSLog([@"Button Col " stringByAppendingString:[NSString stringWithFormat: @"%d", [self getButtonCol:sender]]]);
 }
 
 @end
