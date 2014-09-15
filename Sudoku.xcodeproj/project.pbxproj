@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A379558519C6548E00CFBC4D /* ZZYGGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = A379558419C6548E00CFBC4D /* ZZYGGrid.m */; };
 		A3A460BF19C2DA9100A6732C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A460BE19C2DA9100A6732C /* Foundation.framework */; };
 		A3A460C119C2DA9100A6732C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A460C019C2DA9100A6732C /* CoreGraphics.framework */; };
 		A3A460C319C2DA9100A6732C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A460C219C2DA9100A6732C /* UIKit.framework */; };
@@ -21,7 +22,6 @@
 		A3A460E019C2DA9100A6732C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A460C219C2DA9100A6732C /* UIKit.framework */; };
 		A3A460E819C2DA9100A6732C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3A460E619C2DA9100A6732C /* InfoPlist.strings */; };
 		A3A460EA19C2DA9100A6732C /* SudokuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A460E919C2DA9100A6732C /* SudokuTests.m */; };
-		A3A460FB19C39B0800A6732C /* ZZYGGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A460FA19C39B0800A6732C /* ZZYGGrid.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A379558319C6548E00CFBC4D /* ZZYGGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZYGGrid.h; sourceTree = "<group>"; };
+		A379558419C6548E00CFBC4D /* ZZYGGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZYGGrid.m; sourceTree = "<group>"; };
 		A3A460BB19C2DA9100A6732C /* Sudoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sudoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A460BE19C2DA9100A6732C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A3A460C019C2DA9100A6732C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,8 +56,6 @@
 		A3A460E519C2DA9100A6732C /* SudokuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SudokuTests-Info.plist"; sourceTree = "<group>"; };
 		A3A460E719C2DA9100A6732C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A3A460E919C2DA9100A6732C /* SudokuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SudokuTests.m; sourceTree = "<group>"; };
-		A3A460F919C39B0800A6732C /* ZZYGGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZYGGrid.h; path = ../ZZYGGrid.h; sourceTree = "<group>"; };
-		A3A460FA19C39B0800A6732C /* ZZYGGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZYGGrid.m; path = ../ZZYGGrid.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +115,8 @@
 		A3A460C419C2DA9100A6732C /* Sudoku */ = {
 			isa = PBXGroup;
 			children = (
-				A3A460F919C39B0800A6732C /* ZZYGGrid.h */,
-				A3A460FA19C39B0800A6732C /* ZZYGGrid.m */,
+				A379558319C6548E00CFBC4D /* ZZYGGrid.h */,
+				A379558419C6548E00CFBC4D /* ZZYGGrid.m */,
 				A3A460CD19C2DA9100A6732C /* ZZYGAppDelegate.h */,
 				A3A460CE19C2DA9100A6732C /* ZZYGAppDelegate.m */,
 				A3A460D019C2DA9100A6732C /* Main.storyboard */,
@@ -257,8 +257,8 @@
 			files = (
 				A3A460CF19C2DA9100A6732C /* ZZYGAppDelegate.m in Sources */,
 				A3A460CB19C2DA9100A6732C /* main.m in Sources */,
+				A379558519C6548E00CFBC4D /* ZZYGGrid.m in Sources */,
 				A3A460D519C2DA9100A6732C /* ZZYGViewController.m in Sources */,
-				A3A460FB19C39B0800A6732C /* ZZYGGrid.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ZZYGGrid : UIView
+{
+    CGFloat _buttonSize;
+    int _highlighted;
+}
+    - (id)initWithFrame:(CGRect)frame size:(CGFloat) buttonSize;
+    - (void) setRow:(int)i andCol:(int)j toValue:(int)val needRow:(int)row andCol:(int)column;
 
 @end

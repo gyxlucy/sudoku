@@ -21,11 +21,8 @@ int initialGrid[9][9] = {
     {8,0,0,3,0,2,7,4,0}
 };
 
-UIButton* myButtons[9][9];
-
 @interface ZZYGViewController () {
-    UIView* _gridView;
-    UIButton* _button;
+    ZZYGGrid* _gridView;
 }
 
 @end
@@ -47,44 +44,27 @@ UIButton* myButtons[9][9];
     
     CGRect gridFrame = CGRectMake(x, y, size, size);
     
-    // create grid view
-    _gridView = [[ZZYGGrid alloc] initWithFrame:gridFrame];
-    _gridView.backgroundColor = [UIColor blackColor];
+    // create gridView
+    CGFloat buttonSize = size / 10.0;
+    _gridView = [[ZZYGGrid alloc] initWithFrame:gridFrame size: buttonSize];
     [self.view addSubview:_gridView];
     
-    CGFloat buttonSize = size / 10.0;
-    
-    [self addButtons:buttonSize];
+    [self addButtons: buttonSize];
 
 }
 
 - (void)addButtons:(CGFloat) buttonSize
 {
-    // create button
-    
+    // create buttons
+    // row and column are used for display convenience
     int row = 14;
-    int column;
-    int tag = 0;
+    int column = 0;
     
     for (int i = 0; i < 9; i++) {
         column = 14;
         for (int j = 0; j < 9; j++) {
             
-            
-            
-            CGRect buttonFrame = CGRectMake(row, column, buttonSize, buttonSize);
-            myButtons[i][j] = [[UIButton alloc] initWithFrame:buttonFrame];
-            myButtons[i][j].backgroundColor = [UIColor whiteColor];
-            myButtons[i][j].tag = tag;
-            ++tag;
-            if (initialGrid[i][j]){
-                [myButtons[i][j] setTitle:[NSString stringWithFormat: @"%d", initialGrid[i][j]] forState:UIControlStateNormal];
-            }
-            [myButtons[i][j] setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-            [_gridView addSubview:myButtons[i][j]];
-            
-            // create target for button
-            [myButtons[i][j] addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+            [_gridView setRow:(int)i andCol:(int)j toValue:(int)initialGrid[i][j] needRow:(int)row andCol:(int)column];
             
             column += (buttonSize + 3);
             if ((j + 1) % 3 == 0) {
@@ -98,20 +78,6 @@ UIButton* myButtons[9][9];
     }
 }
 
-- (int)getButtonRow:(UIButton*) sender
-{
-    return sender.tag % 9;
-}
-
-- (int)getButtonCol:(UIButton*) sender
-{
-    return sender.tag / 9;
-}
-
-- (void)setHighlighted:(UIButton*) sender
-{
-    sender.backgroundColor = [UIColor yellowColor];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -119,12 +85,5 @@ UIButton* myButtons[9][9];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)buttonPressed:(UIButton*)sender
-{
-    [self setHighlighted:(sender)];
-    NSLog([@"You Pressed the button " stringByAppendingString: sender.currentTitle]);
-    NSLog([@"Button Row " stringByAppendingString:[NSString stringWithFormat: @"%d", [self getButtonRow:sender]]]);
-    NSLog([@"Button Col " stringByAppendingString:[NSString stringWithFormat: @"%d", [self getButtonCol:sender]]]);
-}
 
 @end
